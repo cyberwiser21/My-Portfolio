@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Avatar from '../components/Avatar';
 import HeroTypewriter from '../components/HeroTypewriter';
 import { useSEO } from '../hooks/useSEO';
 import { personalInfo, aboutMe, projects, skillCategories, services, testimonials, blogNotes } from '../data/portfolioData';
@@ -16,12 +17,20 @@ export default function Home() {
       <div className="container">
         {/* Hero Section */}
         <section className="hero-section" aria-label="Hero Introduction">
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem' }}>
-            <span className="badge">
-              <span className="badge-pulse-dot" aria-hidden="true"></span>
-              {personalInfo.statusBadge}
-            </span>
-            <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>📍 {personalInfo.location}</span>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '1.75rem' }}>
+            <Avatar 
+              src={personalInfo.avatarUrl || '/profile.jpg'} 
+              alt={personalInfo.name} 
+              size={140} 
+              style={{ marginBottom: '1.35rem' }}
+            />
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem' }}>
+              <span className="badge">
+                <span className="badge-pulse-dot" aria-hidden="true"></span>
+                {personalInfo.statusBadge}
+              </span>
+              <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>📍 {personalInfo.location}</span>
+            </div>
           </div>
 
           <h1 className="hero-title">
@@ -31,7 +40,7 @@ export default function Home() {
           {/* Animated Typewriter Hero Headline */}
           <div className="hero-role" style={{ minHeight: '2rem' }}>
             <span style={{ color: 'var(--text-secondary)' }}>I am an </span>
-            <HeroTypewriter 
+            <HeroTypewriter
               words={[
                 "IT Engineering Student",
                 "Aspiring Software Developer",
@@ -62,11 +71,11 @@ export default function Home() {
 
           {/* Social Quick-Access Buttons */}
           <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' }}>
-            <a 
-              href={personalInfo.github} 
-              target="_blank" 
-              rel="noreferrer" 
-              className="btn btn-secondary" 
+            <a
+              href={personalInfo.github}
+              target="_blank"
+              rel="noreferrer"
+              className="btn btn-secondary"
               style={{ padding: '0.55rem 1.25rem', fontSize: '0.875rem' }}
               aria-label="Visit Tejas Patil's GitHub Profile"
             >
@@ -75,11 +84,11 @@ export default function Home() {
               </svg>
               GitHub Profile ↗
             </a>
-            <a 
-              href={personalInfo.linkedin} 
-              target="_blank" 
-              rel="noreferrer" 
-              className="btn btn-secondary" 
+            <a
+              href={personalInfo.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              className="btn btn-secondary"
               style={{ padding: '0.55rem 1.25rem', fontSize: '0.875rem' }}
               aria-label="Visit Tejas Patil's LinkedIn Profile"
             >
@@ -95,9 +104,9 @@ export default function Home() {
 
         {/* About Overview Teaser */}
         <section style={{ margin: '4rem 0 6rem' }} aria-label="About Overview">
-          <div 
+          <div
             style={{
-              background: 'linear-gradient(145deg, rgba(22, 28, 42, 0.8), rgba(15, 20, 32, 0.9))',
+              background: 'linear-gradient(145deg, var(--bg-card) 0%, var(--bg-secondary) 100%)',
               border: '1px solid var(--border-color)',
               borderRadius: 'var(--radius-lg)',
               padding: 'clamp(2rem, 4vw, 3.25rem)',
@@ -126,7 +135,7 @@ export default function Home() {
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               {aboutMe.philosophy.map((item, idx) => (
-                <div 
+                <div
                   key={idx}
                   className="glass-card"
                   style={{ padding: '1.35rem' }}
@@ -157,24 +166,38 @@ export default function Home() {
             {projects.map((project) => (
               <article key={project.id} className="project-card">
                 <div className="project-card-header">
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.85rem' }}>
-                    <span 
-                      style={{ 
-                        fontSize: '0.75rem', 
-                        fontWeight: 700, 
-                        color: 'var(--accent-primary)', 
-                        background: 'rgba(99, 102, 241, 0.1)',
-                        border: '1px solid rgba(99, 102, 241, 0.25)',
-                        padding: '0.3rem 0.75rem',
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
+                    <span
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontSize: '0.75rem',
+                        fontWeight: 700,
+                        color: 'var(--accent-primary)',
+                        background: 'var(--accent-subtle)',
+                        border: '1px solid var(--border-accent)',
+                        padding: '0.35rem 0.85rem',
                         borderRadius: 'var(--radius-full)',
                         textTransform: 'uppercase',
-                        letterSpacing: '0.05em'
+                        letterSpacing: '0.05em',
+                        lineHeight: 1,
+                        whiteSpace: 'nowrap'
+                      }}
+                    >
+                      {project.category}
+                    </span>
+                    <span
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        fontSize: '0.8rem',
+                        color: 'var(--text-muted)',
+                        fontWeight: 500,
+                        lineHeight: 1
                       }}
                     >
                       {project.badge}
-                    </span>
-                    <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-                      {project.category}
                     </span>
                   </div>
 
@@ -214,9 +237,9 @@ export default function Home() {
                   {/* Card Action Links */}
                   <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', paddingTop: '1.25rem', borderTop: '1px solid var(--border-color)', marginTop: 'auto' }}>
                     {project.githubUrl ? (
-                      <a 
-                        href={project.githubUrl} 
-                        target="_blank" 
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
                         rel="noreferrer"
                         className="btn btn-secondary"
                         style={{ padding: '0.5rem 1rem', fontSize: '0.85rem' }}
@@ -233,8 +256,8 @@ export default function Home() {
                       </span>
                     )}
 
-                    <Link 
-                      to={`/projects/${project.id}`} 
+                    <Link
+                      to={`/projects/${project.id}`}
                       className="btn btn-primary"
                       style={{ padding: '0.5rem 1rem', fontSize: '0.85rem', marginLeft: 'auto' }}
                     >
@@ -268,7 +291,7 @@ export default function Home() {
                 </p>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginTop: 'auto' }}>
                   {cat.skills.map((skill) => (
-                    <span 
+                    <span
                       key={skill}
                       style={{
                         background: 'rgba(99, 102, 241, 0.08)',
@@ -306,7 +329,7 @@ export default function Home() {
           <div className="services-grid">
             {services.map((service, index) => (
               <div key={service.id} className="glass-card" style={{ padding: '2rem', display: 'flex', flexDirection: 'column' }}>
-                <div 
+                <div
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
@@ -363,11 +386,11 @@ export default function Home() {
             </p>
           </div>
 
-          <div 
-            style={{ 
-              display: 'grid', 
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', 
-              gap: '2rem' 
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+              gap: '2rem'
             }}
           >
             {blogNotes.map((note) => (
@@ -411,20 +434,20 @@ export default function Home() {
             </p>
           </div>
 
-          <div 
-            style={{ 
-              display: 'grid', 
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', 
-              gap: '2rem' 
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+              gap: '2rem'
             }}
           >
             {testimonials.map((t) => (
-              <div 
-                key={t.id} 
-                className="glass-card" 
-                style={{ 
-                  padding: '2.25rem', 
-                  display: 'flex', 
+              <div
+                key={t.id}
+                className="glass-card"
+                style={{
+                  padding: '2.25rem',
+                  display: 'flex',
                   flexDirection: 'column',
                   position: 'relative'
                 }}
@@ -444,12 +467,12 @@ export default function Home() {
                       {t.role}
                     </span>
                   </div>
-                  <span 
-                    style={{ 
-                      fontSize: '0.75rem', 
-                      background: 'rgba(99, 102, 241, 0.1)', 
-                      color: 'var(--accent-primary)', 
-                      padding: '0.25rem 0.65rem', 
+                  <span
+                    style={{
+                      fontSize: '0.75rem',
+                      background: 'rgba(99, 102, 241, 0.1)',
+                      color: 'var(--accent-primary)',
+                      padding: '0.25rem 0.65rem',
                       borderRadius: 'var(--radius-full)',
                       fontWeight: 600
                     }}
@@ -463,7 +486,7 @@ export default function Home() {
         </section>
 
         {/* Call to Action Banner */}
-        <section 
+        <section
           style={{
             margin: '5rem 0 2rem',
             padding: '3.5rem 2rem',

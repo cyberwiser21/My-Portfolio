@@ -8,7 +8,8 @@ export const personalInfo = {
   email: "tejaspatil1845@gmail.com",
   github: "https://github.com/cyberwiser21",
   linkedin: "https://www.linkedin.com/in/tejas-patil-542032326?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-  statusBadge: "Open to Internships & Projects"
+  statusBadge: "Open to Internships & Projects",
+  avatarUrl: "/profile.jpg"
 };
 
 export const aboutMe = {
@@ -69,7 +70,7 @@ export const projects = [
   {
     id: "ecg-arrhythmia-classification",
     title: "ECG-Based Arrhythmia Classification",
-    badge: "Deep Learning / Academic",
+    badge: "ResNet50 Architecture",
     category: "Machine Learning & AI",
     role: "Academic Researcher & Deep Learning Developer",
     timeline: "Academic Semester Exploration",
@@ -109,7 +110,7 @@ export const projects = [
   {
     id: "post-meal-blood-glucose-prediction",
     title: "Post-Meal Blood Glucose Prediction",
-    badge: "Machine Learning / Regression",
+    badge: "Predictive Regression",
     category: "Machine Learning & AI",
     role: "Machine Learning Developer & Data Analyst",
     timeline: "Research & Exploration Project",
@@ -149,7 +150,7 @@ export const projects = [
   {
     id: "email-spoofing-checker",
     title: "Email Spoofing Checker",
-    badge: "Cybersecurity & Web",
+    badge: "DNS & Domain Security",
     category: "Cybersecurity & Web",
     role: "Security & Full-Stack Developer",
     timeline: "Academic Cybersecurity Project",

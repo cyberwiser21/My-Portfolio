@@ -200,24 +200,38 @@ export default function Projects() {
               <article key={project.id} className="project-card">
                 {/* Card Header & Badge */}
                 <div className="project-card-header">
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.85rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
                     <span 
                       style={{ 
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
                         fontSize: '0.75rem', 
                         fontWeight: 700, 
                         color: 'var(--accent-primary)', 
-                        background: 'rgba(99, 102, 241, 0.1)', 
-                        border: '1px solid rgba(99, 102, 241, 0.25)',
-                        padding: '0.3rem 0.75rem',
+                        background: 'var(--accent-subtle)', 
+                        border: '1px solid var(--border-accent)',
+                        padding: '0.35rem 0.85rem',
                         borderRadius: 'var(--radius-full)',
                         textTransform: 'uppercase',
-                        letterSpacing: '0.05em'
+                        letterSpacing: '0.05em',
+                        lineHeight: 1,
+                        whiteSpace: 'nowrap'
+                      }}
+                    >
+                      {project.category}
+                    </span>
+                    <span 
+                      style={{ 
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        fontSize: '0.8rem', 
+                        color: 'var(--text-muted)',
+                        fontWeight: 500,
+                        lineHeight: 1
                       }}
                     >
                       {project.badge}
-                    </span>
-                    <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-                      {project.category}
                     </span>
                   </div>
 

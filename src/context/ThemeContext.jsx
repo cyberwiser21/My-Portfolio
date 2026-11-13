@@ -3,22 +3,12 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState(() => {
-    const savedTheme = localStorage.getItem('portfolio-theme');
-    if (savedTheme) {
-      return savedTheme;
-    }
-    // Check system preference
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-      return 'light';
-    }
-    return 'dark';
-  });
+  const [theme, setTheme] = useState('dark');
 
   useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('portfolio-theme', theme);
-  }, [theme]);
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('portfolio-theme', 'dark');
+  }, []);
 
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));

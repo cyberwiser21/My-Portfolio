@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Avatar from '../components/Avatar';
 import { useSEO } from '../hooks/useSEO';
 import { personalInfo, aboutMe, skillCategories } from '../data/portfolioData';
 
@@ -45,35 +46,13 @@ export default function About() {
               textAlign: 'center'
             }}
           >
-            {/* Avatar Badge */}
-            <div
-              style={{
-                width: '120px',
-                height: '120px',
-                borderRadius: '50%',
-                background: 'var(--accent-gradient)',
-                padding: '2px',
-                marginBottom: '1.5rem',
-                boxShadow: '0 8px 24px rgba(59, 130, 246, 0.15)'
-              }}
-            >
-              <div
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  borderRadius: '50%',
-                  background: 'var(--bg-secondary)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: '2.5rem',
-                  fontWeight: 800,
-                  color: 'var(--text-primary)'
-                }}
-              >
-                TP
-              </div>
-            </div>
+            {/* Profile Avatar / Photo */}
+            <Avatar 
+              src={personalInfo.avatarUrl || '/profile.jpg'} 
+              alt={personalInfo.name} 
+              size={135} 
+              style={{ marginBottom: '1.5rem' }}
+            />
 
             <h3 style={{ fontSize: '1.4rem', fontWeight: 800, marginBottom: '0.25rem' }}>{personalInfo.name}</h3>
             <p style={{ fontSize: '0.9rem', color: 'var(--accent-primary)', fontWeight: 600, marginBottom: '0.75rem' }}>
