@@ -1,0 +1,67 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 520 >>
+stream
+BT
+/F1 20 Tf
+50 740 Td
+(TEJAS PATIL) Tj
+/F1 11 Tf
+0 -20 Td
+(IT Engineering Student | Aspiring Software Developer | ML Enthusiast) Tj
+0 -16 Td
+(Location: India | Email: tejaspatil1845@gmail.com | GitHub: github.com/cybewiser21) Tj
+0 -30 Td
+/F1 14 Tf
+(EDUCATION) Tj
+/F1 10 Tf
+0 -18 Td
+(Bachelor of Engineering in Information Technology - In Progress) Tj
+0 -30 Td
+/F1 14 Tf
+(TECHNICAL SKILLS) Tj
+/F1 10 Tf
+0 -18 Td
+(Languages: Python, JavaScript, SQL | Frontend: React.js, HTML, CSS) Tj
+0 -16 Td
+(ML & AI: Machine Learning, Deep Learning, ResNet50, Scikit-learn) Tj
+0 -16 Td
+(Tools: MySQL, Git, GitHub, VS Code, Streamlit) Tj
+0 -30 Td
+/F1 14 Tf
+(FEATURED PROJECTS) Tj
+/F1 10 Tf
+0 -18 Td
+(1. ECG-Based Arrhythmia Classification - ResNet50 deep learning on MIT-BIH dataset) Tj
+0 -16 Td
+(2. Post-Meal Blood Glucose Prediction - Regression models using Scikit-learn) Tj
+0 -16 Td
+(3. Email Spoofing Checker - SPF, DKIM, and DMARC verification using Python & Flask) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+00000000115 00000 n 
+00000000236 00000 n 
+00000000808 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+887
+%%EOF

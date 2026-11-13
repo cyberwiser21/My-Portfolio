@@ -1,10 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useSEO } from '../hooks/useSEO';
 import { services, personalInfo } from '../data/portfolioData';
 
 export default function Services() {
+  useSEO({
+    title: `Services & Offerings | ${personalInfo.name}`,
+    description: `Beginner-friendly technical services in Python scripting, SQL databases, React frontend development, and Streamlit dashboards offered by ${personalInfo.name}.`,
+    keywords: 'Python Automation, SQL Queries, React Development, Streamlit Dashboards, Technical Documentation'
+  });
+
   return (
-    <div className="page-container services-page">
+    <div className="page-container services-page animate-fade-in">
       <div className="container">
         <div className="section-header">
           <span className="badge">Developing Capabilities</span>
