@@ -284,28 +284,35 @@ export default function Projects() {
                   </div>
 
                   {/* Actions */}
-                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', paddingTop: '1.25rem', borderTop: '1px solid var(--border-color)' }}>
+                  <div className="project-card-footer">
                     {project.githubUrl ? (
                       <a 
                         href={project.githubUrl} 
                         target="_blank" 
                         rel="noreferrer"
-                        className="btn btn-secondary"
-                        style={{ padding: '0.55rem 1rem', fontSize: '0.85rem' }}
+                        className="btn-github"
+                        aria-label={`View GitHub repository for ${project.title}`}
                       >
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                           <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                         </svg>
-                        GitHub Repo
+                        <span>GitHub</span>
+                        <span className="github-arrow">↗</span>
                       </a>
-                    ) : null}
+                    ) : (
+                      <span className="archive-badge">
+                        <span className="archive-dot"></span>
+                        Academic Project
+                      </span>
+                    )}
 
                     <Link 
                       to={`/projects/${project.id}`}
-                      className="btn btn-primary"
-                      style={{ padding: '0.55rem 1.15rem', fontSize: '0.85rem', marginLeft: project.githubUrl ? 'auto' : '0' }}
+                      className="btn-case-study"
+                      aria-label={`Explore case study for ${project.title}`}
                     >
-                      View Case Study →
+                      <span>Explore Case Study</span>
+                      <span className="case-study-arrow">→</span>
                     </Link>
                   </div>
                 </div>

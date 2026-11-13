@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Avatar from '../components/Avatar';
 import HeroTypewriter from '../components/HeroTypewriter';
 import { useSEO } from '../hooks/useSEO';
-import { personalInfo, aboutMe, projects, skillCategories, services, testimonials, blogNotes } from '../data/portfolioData';
+import { personalInfo, aboutMe, projects, skillCategories, services } from '../data/portfolioData';
 
 export default function Home() {
   useSEO({
@@ -57,7 +57,7 @@ export default function Home() {
             "{personalInfo.tagline}"
           </p>
 
-          <div className="btn-group" style={{ justifyContent: 'center', marginBottom: '2.5rem' }}>
+          <div className="btn-group hero-btn-group" style={{ justifyContent: 'center', marginBottom: '2.5rem' }}>
             <Link to="/projects" className="btn btn-primary">
               View My Projects →
             </Link>
@@ -235,33 +235,35 @@ export default function Home() {
                   </div>
 
                   {/* Card Action Links */}
-                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', paddingTop: '1.25rem', borderTop: '1px solid var(--border-color)', marginTop: 'auto' }}>
+                  <div className="project-card-footer">
                     {project.githubUrl ? (
                       <a
                         href={project.githubUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="btn btn-secondary"
-                        style={{ padding: '0.5rem 1rem', fontSize: '0.85rem' }}
+                        className="btn-github"
                         aria-label={`View GitHub repository for ${project.title}`}
                       >
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                           <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                         </svg>
-                        GitHub ↗
+                        <span>GitHub</span>
+                        <span className="github-arrow">↗</span>
                       </a>
                     ) : (
-                      <span style={{ fontSize: '0.825rem', color: 'var(--text-muted)', fontStyle: 'italic' }}>
-                        Academic archive
+                      <span className="archive-badge">
+                        <span className="archive-dot"></span>
+                        Academic Project
                       </span>
                     )}
 
                     <Link
                       to={`/projects/${project.id}`}
-                      className="btn btn-primary"
-                      style={{ padding: '0.5rem 1rem', fontSize: '0.85rem', marginLeft: 'auto' }}
+                      className="btn-case-study"
+                      aria-label={`Explore case study for ${project.title}`}
                     >
-                      Case Study →
+                      <span>Explore Case Study</span>
+                      <span className="case-study-arrow">→</span>
                     </Link>
                   </div>
                 </div>
@@ -294,9 +296,9 @@ export default function Home() {
                     <span
                       key={skill}
                       style={{
-                        background: 'rgba(99, 102, 241, 0.08)',
+                        background: 'var(--accent-subtle)',
                         color: 'var(--text-primary)',
-                        border: '1px solid rgba(99, 102, 241, 0.22)',
+                        border: '1px solid var(--border-accent)',
                         padding: '0.4rem 0.85rem',
                         borderRadius: 'var(--radius-full)',
                         fontSize: '0.85rem',
@@ -337,7 +339,8 @@ export default function Home() {
                     width: '38px',
                     height: '38px',
                     borderRadius: 'var(--radius-sm)',
-                    background: 'rgba(99, 102, 241, 0.1)',
+                    background: 'var(--accent-subtle)',
+                    border: '1px solid var(--border-accent)',
                     color: 'var(--accent-primary)',
                     fontWeight: 800,
                     fontSize: '0.9rem',
@@ -373,115 +376,6 @@ export default function Home() {
             <Link to="/services" className="btn btn-secondary">
               View All Services & Process →
             </Link>
-          </div>
-        </section>
-
-        {/* Phase 5: Optional Blog / Engineering Notes Section */}
-        <section style={{ margin: '5rem 0' }} aria-label="Technical Notes and Articles">
-          <div className="section-header">
-            <span className="badge">Engineering Notes</span>
-            <h2 className="section-title">Articles & Reflections</h2>
-            <p className="section-subtitle">
-              Brief technical reflections, implementation insights, and takeaways from my academic and self-driven explorations.
-            </p>
-          </div>
-
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '2rem'
-            }}
-          >
-            {blogNotes.map((note) => (
-              <article key={note.id} className="glass-card" style={{ padding: '2.25rem', display: 'flex', flexDirection: 'column' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.85rem' }}>
-                  <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--accent-primary)', background: 'rgba(99, 102, 241, 0.1)', padding: '0.25rem 0.65rem', borderRadius: 'var(--radius-full)' }}>
-                    {note.category}
-                  </span>
-                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-                    {note.readTime}
-                  </span>
-                </div>
-
-                <h3 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '0.75rem', color: 'var(--text-primary)', lineHeight: 1.4 }}>
-                  {note.title}
-                </h3>
-
-                <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.65, marginBottom: '1.5rem', flex: 1 }}>
-                  {note.summary}
-                </p>
-
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', borderTop: '1px solid var(--border-color)', paddingTop: '1.25rem' }}>
-                  {note.tags.map((tag) => (
-                    <span key={tag} className="tech-chip" style={{ fontSize: '0.725rem', padding: '0.2rem 0.55rem' }}>
-                      #{tag}
-                    </span>
-                  ))}
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        {/* Testimonials Section */}
-        <section style={{ margin: '5rem 0' }} aria-label="Testimonials">
-          <div className="section-header">
-            <span className="badge">Peer & Collaborator Endorsements</span>
-            <h2 className="section-title">Testimonials</h2>
-            <p className="section-subtitle">
-              Feedback from academic teammates, peers, and collaborators on my work ethic, code structure, and reliability.
-            </p>
-          </div>
-
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '2rem'
-            }}
-          >
-            {testimonials.map((t) => (
-              <div
-                key={t.id}
-                className="glass-card"
-                style={{
-                  padding: '2.25rem',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  position: 'relative'
-                }}
-              >
-                <div style={{ fontSize: '2.5rem', color: 'var(--accent-primary)', lineHeight: 1, marginBottom: '0.75rem', opacity: 0.6 }} aria-hidden="true">
-                  “
-                </div>
-                <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: 1.75, marginBottom: '1.75rem', flex: 1, fontStyle: 'italic' }}>
-                  {t.quote}
-                </p>
-                <div style={{ borderTop: '1px solid var(--border-color)', paddingTop: '1.25rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <div>
-                    <h4 style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--text-primary)', margin: 0 }}>
-                      {t.author}
-                    </h4>
-                    <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-                      {t.role}
-                    </span>
-                  </div>
-                  <span
-                    style={{
-                      fontSize: '0.75rem',
-                      background: 'rgba(99, 102, 241, 0.1)',
-                      color: 'var(--accent-primary)',
-                      padding: '0.25rem 0.65rem',
-                      borderRadius: 'var(--radius-full)',
-                      fontWeight: 600
-                    }}
-                  >
-                    {t.project}
-                  </span>
-                </div>
-              </div>
-            ))}
           </div>
         </section>
 

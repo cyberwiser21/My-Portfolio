@@ -156,7 +156,7 @@ export default function About() {
                       width: '36px', 
                       height: '36px', 
                       borderRadius: 'var(--radius-sm)', 
-                      background: 'rgba(99, 102, 241, 0.1)', 
+                      background: 'var(--accent-subtle)', 
                       display: 'flex', 
                       alignItems: 'center', 
                       justifyContent: 'center', 
@@ -218,7 +218,7 @@ export default function About() {
                         <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--text-primary)' }}>
                           Bachelor of Engineering (B.E.) in Information Technology
                         </h3>
-                        <span style={{ fontSize: '0.825rem', color: 'var(--accent-primary)', fontWeight: 600, background: 'rgba(99, 102, 241, 0.1)', padding: '0.3rem 0.8rem', borderRadius: 'var(--radius-full)' }}>
+                        <span style={{ fontSize: '0.825rem', color: 'var(--accent-primary)', fontWeight: 600, background: 'var(--accent-subtle)', padding: '0.3rem 0.8rem', borderRadius: 'var(--radius-full)' }}>
                           Undergraduate • In Progress
                         </span>
                       </div>
@@ -235,7 +235,7 @@ export default function About() {
                           <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--text-primary)' }}>
                             Self-Driven Project Development & Learning
                           </h3>
-                          <span style={{ fontSize: '0.825rem', color: '#a5b4fc', fontWeight: 600, background: 'rgba(99, 102, 241, 0.1)', padding: '0.3rem 0.8rem', borderRadius: 'var(--radius-full)' }}>
+                          <span style={{ fontSize: '0.825rem', color: 'var(--accent-primary)', fontWeight: 600, background: 'var(--accent-subtle)', padding: '0.3rem 0.8rem', borderRadius: 'var(--radius-full)' }}>
                             Continuous
                           </span>
                         </div>
