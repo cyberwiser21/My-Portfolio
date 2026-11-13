@@ -28,8 +28,8 @@ export default function Services() {
             maxWidth: '920px',
             margin: '0 auto 3.5rem',
             padding: '1.75rem 2.25rem',
-            background: 'rgba(99, 102, 241, 0.08)',
-            borderColor: 'rgba(99, 102, 241, 0.25)',
+            background: 'var(--accent-subtle)',
+            borderColor: 'var(--border-color)',
             display: 'flex',
             alignItems: 'flex-start',
             gap: '1.25rem'
@@ -58,8 +58,9 @@ export default function Services() {
                         width: '42px',
                         height: '42px',
                         borderRadius: 'var(--radius-sm)',
-                        background: 'rgba(99, 102, 241, 0.12)',
+                        background: 'var(--accent-subtle)',
                         color: 'var(--accent-primary)',
+                        border: '1px solid var(--border-color)',
                         fontWeight: 800,
                         fontSize: '0.95rem',
                         marginBottom: '1.25rem'

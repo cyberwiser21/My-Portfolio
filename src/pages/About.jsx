@@ -52,9 +52,9 @@ export default function About() {
                 height: '120px',
                 borderRadius: '50%',
                 background: 'var(--accent-gradient)',
-                padding: '3px',
+                padding: '2px',
                 marginBottom: '1.5rem',
-                boxShadow: '0 0 30px var(--accent-glow)'
+                boxShadow: '0 8px 24px rgba(59, 130, 246, 0.15)'
               }}
             >
               <div
@@ -68,7 +68,7 @@ export default function About() {
                   justifyContent: 'center',
                   fontSize: '2.5rem',
                   fontWeight: 800,
-                  color: '#ffffff'
+                  color: 'var(--text-primary)'
                 }}
               >
                 TP

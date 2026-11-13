@@ -18,7 +18,7 @@ export default function LoadingFallback() {
         style={{
           width: '40px',
           height: '40px',
-          border: '3px solid rgba(99, 102, 241, 0.15)',
+          border: '3px solid rgba(59, 130, 246, 0.15)',
           borderTopColor: 'var(--accent-primary)',
           borderRadius: '50%',
           animation: 'spin 0.75s linear infinite'

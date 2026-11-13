@@ -468,8 +468,8 @@ export default function Home() {
             margin: '5rem 0 2rem',
             padding: '3.5rem 2rem',
             borderRadius: 'var(--radius-lg)',
-            background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.18) 0%, rgba(168, 85, 247, 0.18) 100%)',
-            border: '1px solid rgba(99, 102, 241, 0.35)',
+            background: 'var(--accent-gradient-subtle)',
+            border: '1px solid var(--border-color)',
             textAlign: 'center',
             boxShadow: 'var(--shadow-card)'
           }}

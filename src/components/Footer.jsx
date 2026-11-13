@@ -20,7 +20,7 @@ export default function Footer() {
               <div style={{ marginTop: '1rem', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.85rem', color: 'var(--text-muted)' }}>
                 <span>📍 {personalInfo.location}</span>
                 <span>•</span>
-                <span style={{ color: '#818cf8', fontWeight: 500 }}>{personalInfo.statusBadge}</span>
+                <span style={{ color: 'var(--accent-primary)', fontWeight: 500 }}>{personalInfo.statusBadge}</span>
               </div>
           </div>
 
